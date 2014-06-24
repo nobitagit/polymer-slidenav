@@ -2,7 +2,7 @@
   "private": true,
   "name": "polymer-slidenav",
   "description": "> Sliding Navigation web-component for [Polymer](http://www.polymer-project.org/). > > Looking for a working example? Check [this demo](https://github.com/webcomponents/hello-world-polymer).",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",

@@ -1,8 +1,8 @@
-# &lt;my-repo&gt;
+# Polymer SlideNav 
+## Web-component for sliding navigtion menus
 
-> A bare minimum custom element starter-kit using [Polymer](http://www.polymer-project.org/).
->
-> Looking for a working example? Check [hello-world-polymer](https://github.com/webcomponents/hello-world-polymer).
+This web-component is built on top of [Polymer](http://www.polymer-project.org/) and allows 
+Check the demos [here](https://github.com/webcomponents/hello-world-polymer)
 
 ## Demo
 
@@ -13,10 +13,10 @@
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install my-repo --save
+$ bower install polymer-slidenav --save
 ```
 
-Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
+Or [download as a ZIP](https://github.com/nobitagit/polymer-slidenav/archive/master.zip).
 
 ## Usage
 
@@ -26,16 +26,19 @@ Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
     <script src="bower_components/platform/platform.js"></script>
     ```
 
-2. Import Custom Element:
+2. Import Polymer SlideNav:
 
     ```html
     <link rel="import" href="bower_components/my-repo/dist/my-element.html">
     ```
 
-3. Start using it!
+3. Start using it.
 
     ```html
-    <my-element></my-element>
+	  <polymer-slidenav>
+			<slidenav-toggler></slidenav-toggler>
+			<slidenav-menu></slidenav-menu>
+	  </polymer-slidenav> 
     ```
 
 ## Options
@@ -96,11 +99,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## History
-
-For detailed changelog, check [Releases](https://github.com/my-user/my-repo/releases).
+5. Submit a pull request.
 
 ## License
 
