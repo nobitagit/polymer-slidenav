@@ -1,12 +1,13 @@
 # Polymer SlideNav 
-## Web-component for sliding navigtion menus
 
-This web-component is built on top of [Polymer](http://www.polymer-project.org/) and allows 
-Check the demos [here](https://github.com/webcomponents/hello-world-polymer)
+A Web-component for sliding navigation menus built on top of [Polymer](http://www.polymer-project.org/). 
+This component provides a flexible and easy to customise base for website and apps menus with sliding animation. Simply add it to the page and style it easily as needed.
 
 ## Demo
 
-[Check it live!](http://my-user.github.io/my-repo)
+The web-component allows great flexibilty and ease of use. Check out these examples.
++ [Top drawer menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-drawer.html)
++ [Fixed sliding menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-fixed.html)
 
 ## Install
 
@@ -36,8 +37,12 @@ Or [download as a ZIP](https://github.com/nobitagit/polymer-slidenav/archive/mas
 
     ```html
 	  <polymer-slidenav>
-			<slidenav-toggler></slidenav-toggler>
-			<slidenav-menu></slidenav-menu>
+			<slidenav-toggler>
+				<-- insert burger icon here :) -->
+			</slidenav-toggler>
+			<slidenav-menu>
+				<-- insert you list items or menu entries here -->
+			</slidenav-menu>
 	  </polymer-slidenav> 
     ```
 
@@ -45,19 +50,20 @@ Or [download as a ZIP](https://github.com/nobitagit/polymer-slidenav/archive/mas
 
 Attribute     | Options     | Default      | Description
 ---           | ---         | ---          | ---
-`foo`         | *string*    | `bar`        | Lorem ipsum dolor.
+`speed`       | *string*    | `0.4s`       | The opening/closing animation speed.
 
+Declare this option directly in the markup.
+
+    ```html
+  <polymer-slidenav speed=".2s">
+    ```
 ## Methods
 
-Method        | Parameters   | Returns     | Description
----           | ---          | ---         | ---
-`unicorn()`   | None.        | Nothing.    | Magic stuff appears.
+Upcoming.
 
 ## Events
 
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
+Upcoming.
 
 ## Development
 
@@ -99,7 +105,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request.
+5. ( Submit a pull request )
 
 ## License
 
