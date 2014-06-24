@@ -1,7 +1,8 @@
 # Polymer SlideNav 
 
 A Web-component for sliding navigation menus built on top of [Polymer](http://www.polymer-project.org/). 
-This component provides a flexible and easy to customise base for website and apps menus with sliding animation. Simply add it to the page and style it easily as needed.
+
+Polymer SlideNav provides a flexible and easy to customise base for website and apps menus with sliding animation. Simply add it to the page and easily style it as needed.
 
 ## Demo
 
@@ -11,7 +12,7 @@ The web-component allows great flexibilty and ease of use. Check out these examp
 
 ## Install
 
-Install the component using [Bower](http://bower.io/):
+The best way to install the component is using [Bower](http://bower.io/):
 
 ```sh
 $ bower install polymer-slidenav --save
@@ -30,7 +31,7 @@ Or [download as a ZIP](https://github.com/nobitagit/polymer-slidenav/archive/mas
 2. Import Polymer SlideNav:
 
     ```html
-    <link rel="import" href="bower_components/my-repo/dist/my-element.html">
+    <link rel="import" href="bower_components/polymer-slidenav/dist/polymer-slidenav.html">
     ```
 
 3. Start using it.
