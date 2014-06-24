@@ -1,18 +1,16 @@
 {
   "private": true,
   "name": "polymer-slidenav",
-  "description": "> A bare minimum custom element starter-kit using [Polymer](http://www.polymer-project.org/). > > Looking for a working example? Check [hello-world-polymer](https://github.com/webcomponents/hello-world-polymer).",
-  "version": "0.0.1",
+  "description": "> Sliding Navigation web-component for [Polymer](http://www.polymer-project.org/). > > Looking for a working example? Check [this demo](https://github.com/webcomponents/hello-world-polymer).",
+  "version": "0.0.2",
   "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nobitagit/polymer-boilerplate.git"
+    "url": "https://github.com/nobitagit/polymer-slidenav.git"
   },
   "keywords": [
     "web-components",
+    "web-component",
     "polymer",
     "menu",
     "toggle",
@@ -23,9 +21,9 @@
   "author": "Nobita",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nobitagit/polymer-boilerplate/issues"
+    "url": "https://github.com/nobitagit/polymer-slidenav/issues"
   },
-  "homepage": "https://github.com/nobitagit/polymer-boilerplate",
+  "homepage": "https://github.com/nobitagit/polymer-slidenav",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.9",
