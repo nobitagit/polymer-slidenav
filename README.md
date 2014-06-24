@@ -2,11 +2,11 @@
 
 A Web-component for sliding navigation menus built on top of [Polymer](http://www.polymer-project.org/). 
 
-Polymer SlideNav provides a flexible and easy to customise base for website and apps menus with sliding animation. Simply add it to the page and easily style it as needed.
+Polymer SlideNav provides a flexible, easy to customise base for website and apps menus with sliding animation. Simply add it to the page and easily style it as needed.
 
 ## Demo
 
-The web-component allows great flexibilty and ease of use. Check out these examples.
+The web-component provides full functionality out of the box but no opinionated style allowing great flexibilty and ease of use. Check out some examples:
 + [Top drawer menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-drawer.html)
 + [Fixed sliding menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-fixed.html)
 
@@ -56,7 +56,7 @@ Attribute     | Options     | Default      | Description
 Declare this option directly in the markup.
 
     ```html
-  <polymer-slidenav speed=".2s">
+    <polymer-slidenav speed=".2s">
     ```
 ## Methods
 
