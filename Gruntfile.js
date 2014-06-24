@@ -11,12 +11,11 @@ module.exports = function(grunt) {
         },
         'gh-pages': {
             options: {
-                clone: 'bower_components/my-repo'
+                base : "dist" 
             },
             src: [
                 'bower_components/**/*',
-                '!bower_components/my-repo/**/*',
-                'demo/*', 'src/*', 'index.html'
+                'demos/*', 'src/*', 'index.html'
             ]
         },
         'replace': {
