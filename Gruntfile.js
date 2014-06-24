@@ -11,9 +11,10 @@ module.exports = function(grunt) {
         },
         'gh-pages': {
             options: {
-                base : "/" 
+                base : "" 
             },
             src: [
+		            'bower_components/**/*',
                 'demos/*', 
                 'src/*', 
                 'index.html'
