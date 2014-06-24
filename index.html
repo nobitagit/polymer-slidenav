@@ -8,29 +8,30 @@
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="src/my-element.html">
+    <link rel="import" href="src/polymer-slidenav.html">
 </head>
 <body unresolved>
 
     <!-- Using Custom Elements -->
-    <header>
     <polymer-slidenav speed=".2s">
-    	<div class="tg">
-			<svg id="icoOpen2">
-					<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
-					<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
-					<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
-			</svg>    		
+    	<div id="toggler" class="sl-toggle">
+				<svg id="icoOpen2">
+						<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
+						<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
+						<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
+				</svg>    		
     	</div>
-		<ul class="menu">
+		<ul id="menu" class="sl-menu">
 			<li>Home</li>
 			<li>About us</li>
 			<li>News</li>
 			<li>Portfolio</li>
 			<li>Contacts</li>
 		</ul>
+			<slidenav-toggler>dsdsd
+			</slidenav-toggler>
     </polymer-slidenav> 
-    </header>
+
     <div>
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

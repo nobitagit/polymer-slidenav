@@ -12,20 +12,26 @@
     <style>
       body{
     	 font-family: Helvetica, Arial, sans-serif;
+    	 margin: 0;
       }
 	   polymer-slidenav{
-			  position: fixed;
+			  position: relative;
 			  width: 100%;
-			  max-width: 500px;
+			  background: rgb(63,63,63);
+			  color: rgb(200,200,200);
 	    }
     	svg{
-		    background: rgb(36, 197, 159);
 			  padding: 10px;
 			  width: 40px;
 			  display: block;    		
     	}
+    	slidenav-menu{
+    		box-shadow: rgb(34, 34, 34) 0px -3px 10px 1px inset;
+    	}
+    	.sl-toggle{
+    		position: absolute;
+    	}
     	.sl-menu{
-    		background: rgb(36, 197, 159);
 			  width: 100%;
 			  padding: 20px;
 			  margin: 0;
@@ -42,7 +48,6 @@
     	}
     	.text{
     		padding-top: 60px;
-    		max-width: 500px;
     		color: #333;
     		line-height: 1.8rem;
     	}
@@ -50,18 +55,9 @@
 </head>
 <body unresolved>
 
-    <polymer-slidenav speed=".2s">
-			<slidenav-toggler>
-	    	<div class="sl-toggle">
-				<svg width="30" height="30" id="icoOpen2">
-						<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
-						<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
-						<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
-				</svg>    		
-	    	</div>
-			</slidenav-toggler>
-			<slidenav-menu>
-				<ul class="sl-menu">
+    <polymer-slidenav speed=".2s" togglerUnder="true">
+    	<slidenav-menu>
+				<ul id="menu" class="sl-menu">
 					<li>Home</li>
 					<li>Articles</li>
 					<li>Maps</li>
@@ -70,7 +66,14 @@
 					<li>Portfolio</li>
 					<li>Contacts</li>
 				</ul>
-			</slidenav-menu>
+    	</slidenav-menu>
+  		<slidenav-toggler class="sl-toggle">
+					<svg width="30" height="30" id="icoOpen2">
+							<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
+							<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
+							<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
+					</svg>  
+      </slidenav-toggler>
     </polymer-slidenav> 
 
     <div class="text">  
