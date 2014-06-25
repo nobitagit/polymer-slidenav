@@ -1,4 +1,4 @@
-# Polymer SlideNav 
+# <polymer-slidenav> 
 
 A Web-component for sliding navigation menus built on top of [Polymer](http://www.polymer-project.org/). 
 
