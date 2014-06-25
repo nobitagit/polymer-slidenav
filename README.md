@@ -56,16 +56,11 @@ Attribute     | Options     | Default      | Description
 Declare this option directly in the markup.
 
     ```html
+
     <polymer-slidenav speed=".2s">
+
     ```
-## Methods
-
-Upcoming.
-
-## Events
-
-Upcoming.
-
+    
 ## Development
 
 In order to run it locally you'll need to fetch some dependencies and a basic server setup.
