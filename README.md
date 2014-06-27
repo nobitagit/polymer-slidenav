@@ -9,7 +9,7 @@ Polymer SlideNav provides a flexible, easy to customise base for website and app
 The web-component provides full functionality out of the box but no opinionated style allowing great flexibilty and ease of use. Check out some examples:
 + [Top drawer menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-drawer.html)
 + [Fixed sliding menu](http://nobitagit.github.io/polymer-slidenav/demos/demo-fixed.html)
-+ [top drawer with slideIn animation](http://nobitagit.github.io/polymer-slidenav/demos/demo-slideIn.html)
++ [Top drawer with slide-in animation](http://nobitagit.github.io/polymer-slidenav/demos/demo-slideIn.html)
 
 ## Install
 
