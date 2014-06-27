@@ -1,6 +1,6 @@
 {
   "name": "polymer-slidenav",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A Polymer based web-component for sliding navigation menus",
   "license": "MIT",
   "main": "dist/polymer-slidenav.html",
