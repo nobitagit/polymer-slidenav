@@ -60,12 +60,25 @@ Declare this option directly in the markup.
 ```
 
 ## Events
+Polymer SlideNav fires a series of events you can hook to.
+Add an eventListener (for ex. to the body) and fire your callbacks like so:
+```js
+ document.body.addEventListener('slidenav/is-open', function(evt){
+		console.dir(evt);
+		alert('navbar is now open');
+ });
+```
+The event passed as argument contains a lot of useful data.
+In this case `evt.target` will be the whole `<polymer-slidenav></polymer-slidenav>` so you can easily find any children inside the element.
+Here is a full breakdown of the events that the component fires.
 
-Event                | Triggered when:
----                  | ---
-`animation-complete` | sliding animation is complete.\**
-`animation-complete` | Triggers when animation is complete.
-`animation-complete` | Triggers when animation is complete.
+Event                         | Triggered when:
+---                           | ---
+`slidenav/setup-complete`     | Initial setup of the menu is complete.
+`slidenav/show`               | Opening animation begins.
+`slidenav/hide`               | Closing animation begins.
+`slidenav/is-open`            | Sliding animation is complete and navbar is *open*.
+`slidenav/is-closed`          | Sliding animation is complete and navbar is *open*.
 
 ## Development
 

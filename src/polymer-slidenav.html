@@ -46,7 +46,9 @@ My cool element
               this.async(function(){
                 	this.tran();
               }, null, 1);
-              this.initialized = true;   	
+              this.initialized = true;  
+
+              this.fire('slidenav/setup-complete'); 	
             },
             storeValues: function(){
                this.openH = this.menu.getBoundingClientRect()[this.prop];
@@ -57,6 +59,7 @@ My cool element
                 return parseInt( getComputedStyle(el).getPropertyValue(prop) );
             },
             hide: function(){
+	              this.fire('slidenav/hide');
                 // get height every time but the first one
               	this.storeValues();
               	this.tran();
@@ -66,8 +69,9 @@ My cool element
                 }, null, 1);
             },
             show: function(){
+              this.fire('slidenav/show'); 
               this.setVal( this.openH );
-              this.state = 'open';  
+              this.state = 'open';
             },
             collapse: function(){
               this.menu.style.height = 0;
@@ -91,7 +95,7 @@ My cool element
                     this.menu.style.height = 'auto';
                 }
                 // fire event along with the open or close state
-                this.fire('transition-complete', {state: this.state});
+                this.fire('slidenav/is-'+ this.state );
             },
             tran: function(){
                 this.menu.style.webkitTransition = this.prop + ' ' + this.speed;
