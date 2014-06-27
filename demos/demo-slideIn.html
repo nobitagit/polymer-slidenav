@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drawer Navbar demo | Polymer SlideNav web-component</title>
+
+    <!-- Importing Web Component's Polyfill -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="../src/polymer-slidenav.html">
+    <style>
+      body{
+    	 font-family: Helvetica, Arial, sans-serif;
+    	 margin: 0;
+      }
+	   polymer-slidenav{
+			  position: relative;
+			  width: 100%;
+			  background: rgb(63,63,63);
+			  color: rgb(200,200,200);
+	    }
+    	svg{
+			  padding: 10px;
+			  width: 40px;
+			  display: block;    		
+    	}
+    	slidenav-menu{
+    		box-shadow: rgb(34, 34, 34) 0px -3px 10px 1px inset;
+    	}
+    	.text{
+    		padding: 60px 10px;
+    		color: #333;
+    		line-height: 1.8rem;
+    	}
+    	.sl-toggle{
+    		position: absolute;
+    	}
+    	.sl-menu{
+			  width: 100%;
+			  padding: 20px;
+			  margin: 0;
+			  padding-left: 0;
+    	}
+
+    	.sl-menu li:hover{
+			  color: rgb(240,240,240);   		
+    	}
+
+    	.sl-menu li{
+    		list-style: none;
+    		line-height: 1.9rem;
+    		padding-left: 10px;
+    		cursor: pointer;
+				/* these styles are neede for the slide animation */
+      	-webkit-transition: -webkit-transform .55s cubic-bezier(0.525, -0.110, 0.355, 1.000), opacity 1.3s;
+      	transition: transform .55s cubic-bezier(0.525, -0.110, 0.355, 1.000), opacity 1.3s;
+      	-webkit-transform: translateX(0);
+      	transform: translateX(0);
+      	opacity: 1;
+    	}
+      .sl-menu li.off-screen{
+      	-webkit-transform: translateX(-10%);
+      	transform: translateX(-10%);
+      	opacity: 0;
+      }
+
+    </style>
+</head>
+<body unresolved>
+
+    <polymer-slidenav speed=".5s" togglerUnder="true">
+    	<slidenav-menu>
+				<ul id="menu" class="sl-menu">
+					<li>Home</li>
+					<li>Articles</li>
+					<li>Maps</li>
+					<li>About us</li>
+					<li>News</li>
+					<li>Portfolio</li>
+					<li>Contacts</li>
+				</ul>
+    	</slidenav-menu>
+  		<slidenav-toggler class="sl-toggle">
+					<svg width="30" height="30" id="icoOpen2">
+							<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
+							<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
+							<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
+					</svg>  
+      </slidenav-toggler>
+    </polymer-slidenav> 
+
+    <div class="text">  
+	    <h1>Polymer-slidenav demo</h1>
+	    <h2>Navigation with fixed toggle</h2>
+	    <p>
+	    	Check out other <b>demos</b> and the <b>docs</b> for this web-component in the repo <a href="https://github.com/nobitagit/polymer-slidenav">homepage</a>.
+	    </p> 	
+    	<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+			<p>
+				It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+			</p>
+ 			<p>
+				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+		</p>
+		<p>
+				The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    	</p>
+    </div>
+		<script>
+
+		var lis, 
+				len;
+
+		// we wait for the component to be ready, 
+		// then select all list-items of the menu and count how many items we have
+		// and finally add the class "off-screen" to let let them slide off the view
+		document.body.addEventListener('slidenav/is-ready', function(e){
+			lis = e.target.getElementsByTagName('li');
+			len = lis.length;
+      Array.prototype.forEach.call(lis, function(el){
+      	el.classList.add('off-screen');
+      });
+		});
+
+		// When the navbar is opened we remove the off-screen class from each list-item.
+		// Instead of removing the class from them at the same time we do it with a slight
+		// delay (setTimeout) one after the other.
+		document.body.addEventListener('slidenav/show', function(){
+			var i = 0;
+      (function looper(){
+      	setTimeout(function(){
+      		lis[i].classList.remove('off-screen');
+      		i++;
+
+      		if( i < len ){
+      			looper();
+      		}
+      	}, 10);
+
+      })();
+		});
+
+		// When the navbar is closed we remove the off-screen class from each list-item to hide them back again.
+		document.body.addEventListener('slidenav/hide', function(){
+        Array.prototype.forEach.call(lis, function(el){
+        	el.classList.add('off-screen');
+        });			
+		});
+
+		</script>
+</body>
+</html>
