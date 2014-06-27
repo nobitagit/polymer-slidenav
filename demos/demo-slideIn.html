@@ -28,6 +28,11 @@
     	slidenav-menu{
     		box-shadow: rgb(34, 34, 34) 0px -3px 10px 1px inset;
     	}
+    	.text{
+    		padding: 60px 10px;
+    		color: #333;
+    		line-height: 1.8rem;
+    	}
     	.sl-toggle{
     		position: absolute;
     	}
@@ -37,25 +42,34 @@
 			  margin: 0;
 			  padding-left: 0;
     	}
+
+    	.sl-menu li:hover{
+			  color: rgb(240,240,240);   		
+    	}
+
     	.sl-menu li{
     		list-style: none;
     		line-height: 1.9rem;
     		padding-left: 10px;
     		cursor: pointer;
+				/* these styles are neede for the slide animation */
+      	-webkit-transition: -webkit-transform .55s cubic-bezier(0.525, -0.110, 0.355, 1.000), opacity 1.3s;
+      	transition: transform .55s cubic-bezier(0.525, -0.110, 0.355, 1.000), opacity 1.3s;
+      	-webkit-transform: translateX(0);
+      	transform: translateX(0);
+      	opacity: 1;
     	}
-    	.sl-menu li:hover{
-			  color: rgb(240,240,240);   		
-    	}
-     	.text{
-    		padding: 60px 10px;
-    		color: #333;
-    		line-height: 1.8rem;
-    	}
+      .sl-menu li.off-screen{
+      	-webkit-transform: translateX(-10%);
+      	transform: translateX(-10%);
+      	opacity: 0;
+      }
+
     </style>
 </head>
 <body unresolved>
 
-    <polymer-slidenav speed=".2s" togglerUnder="true">
+    <polymer-slidenav speed=".5s" togglerUnder="true">
     	<slidenav-menu>
 				<ul id="menu" class="sl-menu">
 					<li>Home</li>
@@ -95,6 +109,47 @@
 				The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
     	</p>
     </div>
+		<script>
 
+		var lis, 
+				len;
+
+		// we wait for the component to be ready, 
+		// then select all list-items of the menu and count how many items we have
+		// and finally add the class "off-screen" to let let them slide off the view
+		document.body.addEventListener('slidenav/is-ready', function(e){
+			lis = e.target.getElementsByTagName('li');
+			len = lis.length;
+      Array.prototype.forEach.call(lis, function(el){
+      	el.classList.add('off-screen');
+      });
+		});
+
+		// When the navbar is opened we remove the off-screen class from each list-item.
+		// Instead of removing the class from them at the same time we do it with a slight
+		// delay (setTimeout) one after the other.
+		document.body.addEventListener('slidenav/show', function(){
+			var i = 0;
+      (function looper(){
+      	setTimeout(function(){
+      		lis[i].classList.remove('off-screen');
+      		i++;
+
+      		if( i < len ){
+      			looper();
+      		}
+      	}, 10);
+
+      })();
+		});
+
+		// When the navbar is closed we remove the off-screen class from each list-item to hide them back again.
+		document.body.addEventListener('slidenav/hide', function(){
+        Array.prototype.forEach.call(lis, function(el){
+        	el.classList.add('off-screen');
+        });			
+		});
+
+		</script>
 </body>
 </html>
