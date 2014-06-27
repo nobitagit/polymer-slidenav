@@ -55,12 +55,18 @@ Attribute     | Options     | Default      | Description
 
 Declare this option directly in the markup.
 
-    ```html
+```html
+<polymer-slidenav speed=".2s">
+```
 
-    <polymer-slidenav speed=".2s">
+## Events
 
-    ```
-    
+Event                | Triggered when:
+---                  | ---
+`animation-complete` | sliding animation is complete.\**
+`animation-complete` | Triggers when animation is complete.
+`animation-complete` | Triggers when animation is complete.
+
 ## Development
 
 In order to run it locally you'll need to fetch some dependencies and a basic server setup.

@@ -90,6 +90,8 @@ My cool element
                 if( this.state === 'open' ){
                     this.menu.style.height = 'auto';
                 }
+                // fire event along with the open or close state
+                this.fire('transition-complete', {state: this.state});
             },
             tran: function(){
                 this.menu.style.webkitTransition = this.prop + ' ' + this.speed;
