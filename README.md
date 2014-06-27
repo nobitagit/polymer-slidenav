@@ -80,6 +80,8 @@ Event                         | Fires when:
 `slidenav/is-open`            | Sliding animation is complete and navbar is **open**.
 `slidenav/is-closed`          | Sliding animation is complete and navbar is **closed**.
 
+Refer to [this logger](http://nobitagit.github.io/polymer-slidenav/demos/demo-events.html) to see a demo of these events.
+
 ## Development
 
 In order to run it locally you'll need to fetch some dependencies and a basic server setup.
