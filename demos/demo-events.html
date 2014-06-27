@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drawer Navbar demo | Polymer SlideNav web-component</title>
+
+    <!-- Importing Web Component's Polyfill -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="../src/polymer-slidenav.html">
+    <style>
+      body{
+    	 font-family: Helvetica, Arial, sans-serif;
+    	 margin: 0;
+      }
+	   polymer-slidenav{
+			  position: relative;
+			  width: 100%;
+			  background: rgb(63,63,63);
+			  color: rgb(200,200,200);
+	    }
+    	svg{
+			  padding: 10px;
+			  width: 40px;
+			  display: block;    		
+    	}
+    	slidenav-menu{
+    		box-shadow: rgb(34, 34, 34) 0px -3px 10px 1px inset;
+    	}
+    	.sl-toggle{
+    		position: absolute;
+    	}
+    	.sl-menu{
+			  width: 100%;
+			  padding: 20px;
+			  margin: 0;
+			  padding-left: 0;
+    	}
+    	.sl-menu li{
+    		list-style: none;
+    		line-height: 1.9rem;
+    		padding-left: 10px;
+    		cursor: pointer;
+    	}
+    	.sl-menu li:hover{
+			  color: rgb(240,240,240);   		
+    	}
+			.text{
+    		padding: 60px 10px;
+    		color: #333;
+    		line-height: 1.8rem;
+    	}
+
+    	#logger{
+				width: 400px;
+				height: 200px;
+				overflow: scroll;
+				background: #eee;
+				line-height: 1.1rem;
+				position: fixed;
+				top: 0;
+				right: 0;
+    		}
+    		#logger p{
+					margin: 0.1rem;
+    		}
+    		#logger span{
+					color: green;
+    		}
+    </style>
+</head>
+<body unresolved>
+
+    <polymer-slidenav speed=".2s" togglerUnder="true">
+    	<slidenav-menu>
+				<ul id="menu" class="sl-menu">
+					<li>Home</li>
+					<li>Articles</li>
+					<li>Maps</li>
+					<li>About us</li>
+					<li>News</li>
+					<li>Portfolio</li>
+					<li>Contacts</li>
+				</ul>
+    	</slidenav-menu>
+  		<slidenav-toggler class="sl-toggle">
+					<svg width="30" height="30" id="icoOpen2">
+							<path d="M0,5 40,5" stroke="#333" stroke-width="6"></path>
+							<path d="M0,15 40,15" stroke="#333" stroke-width="6"></path>
+							<path d="M0,25 40,25" stroke="#333" stroke-width="6"></path>
+					</svg>  
+      </slidenav-toggler>
+    </polymer-slidenav> 
+
+    <div class="text">  
+	    <h1>Polymer-slidenav event logger</h1>
+    </div>
+    <div id="logger">
+    	
+    </div>
+	<script>
+
+	var evts = [
+		'slidenav/is-ready',
+		'slidenav/show',
+		'slidenav/hide',
+		'slidenav/is-open',
+		'slidenav/is-closed'
+		],
+		logger = document.getElementById('logger'),
+		i = 0;
+
+	evts.forEach(addListener);
+
+	function addListener(evtName, index, array){
+		document.body.addEventListener(evtName, function(evt){
+			i++;
+			var first = logger.children[0];
+			var el = document.createElement('p');
+			el.innerHTML = "Event n." + i + " fired: <span>" + evt.type + "</span>";
+			logger.insertBefore(el, first);
+		});
+	};
+
+	</script>
+
+</body>
+</html>
