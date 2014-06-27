@@ -6,6 +6,7 @@
   "main": "dist/polymer-slidenav.html",
   "private": false,
   "keywords": [
+    "web-components",
     "web-component",
     "polymer",
     "menu",
